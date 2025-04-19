@@ -62,10 +62,12 @@ fn main() {
         "rel" => {
             lappy.disconnect(&speaker);
             homesrv.connect(&speaker);
+            homesrv.set_volume(50);
         }
         "reg" => {
             homesrv.disconnect(&speaker);
             lappy.connect(&speaker);
+            lappy.set_volume(65);
         }
         _ => {
             print_help();

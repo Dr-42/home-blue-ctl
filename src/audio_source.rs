@@ -67,4 +67,8 @@ impl AudioSource {
         let device_info = self.run_command(&format!("bluetoothctl info {}", device.mac_address()));
         device_info.contains("Connected: yes")
     }
+
+    pub fn set_volume(&self, volume: u8) {
+        self.run_command(format!("amixer set Master {}", &volume).as_str());
+    }
 }
